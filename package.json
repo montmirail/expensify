@@ -5,10 +5,13 @@
   "author": "montmirail",
   "license": "MIT",
   "scripts": {
+    "start": "node server/server.js",
     "build": "webpack",
+    "build:prod": "webpack -p --env production",
     "dev": "webpack-dev-server",
     "test": "jest --config=jest.config.json",
-    "test:watch": "jest --config=jest.config.json --watchAll"
+    "test:watch": "jest --config=jest.config.json --watchAll",
+    "heroku-postbuild": "npm run build:prod"
   },
   "dependencies": {
     "babel-core": "6.26.0",
@@ -17,6 +20,7 @@
     "babel-preset-env": "1.6.1",
     "babel-preset-react": "6.24.1",
     "css-loader": "0.28.11",
+    "express": "^4.16.3",
     "firebase": "4.12.1",
     "moment": "2.22.0",
     "node-sass": "4.8.3",
@@ -40,7 +44,9 @@
     "enzyme-adapter-react-16": "1.1.1",
     "enzyme-react-16": "1.0.0",
     "enzyme-to-json": "3.3.3",
+    "extract-text-webpack-plugin": "^4.0.0-alpha.0",
     "jest": "22.4.3",
+    "mini-css-extract-plugin": "^0.4.0",
     "raf": "3.4.0",
     "react-test-renderer": "16.3.1",
     "webpack": "4.2.0",
